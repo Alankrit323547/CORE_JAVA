@@ -1,0 +1,27 @@
+/**
+Name: ALANKRIT BAMRARA
+Type: Practice Assignment
+Print the below multiplication table
+5 * 4 = 20
+6 * 6 = 36
+7 * 8 = 56
+**/
+============================================================================================================================
+
+package tr4p;
+import java.util.*;
+public class nine {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int i,j;
+		Scanner sc = new Scanner(System.in);
+		int num=sc.nextInt();
+		for(i=5,j=4;i<5+num&&j<4+2*num;i++,j+=2)
+		{
+			System.out.print(i+" * "+j+" = "+i*j);
+			System.out.println();
+		}
+	}
+
+}

@@ -1,0 +1,29 @@
+/**
+Name: ALANKRIT BAMRARA
+Type: Practice Assignment
+Write a program to check whether a given number is an armstrong number
+**/
+===========================================================================================================================
+
+package tr2;
+import java.util.*;
+public class armstrong {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int num=sc.nextInt();
+		int x=num,p,s=0;
+		while(num>0)
+		{
+			p=num%10;
+			s=s+p*p*p;
+			num=num/10;
+		}
+		if(s==x)
+			System.out.println("Armstrong");
+		else
+			System.out.println("Not Armstrong");
+	}
+
+}

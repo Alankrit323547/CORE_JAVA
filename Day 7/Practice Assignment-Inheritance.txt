@@ -1,0 +1,107 @@
+/**
+Name: Alankrit Bamrara
+Type: Practice Assignment
+Write a program to implement functioning of SB and FD accounts using inheritance.
+**/
+===========================================================================================================================
+
+package tr9;
+
+public abstract class account {
+	int acc_no;
+	float acc_bal;
+	String name;
+	float roi;
+	public account(int acc_no, float acc_bal, String name) {
+		super();
+		this.acc_no = acc_no;
+		this.acc_bal = acc_bal;
+		this.name = name;
+	}
+	public void deposit(float amt)
+	{
+		this.acc_bal += amt;
+	}
+	public void withdraw(float amt)
+	{
+		this.acc_bal -= amt;
+	}
+	public float check_bal()
+	{
+		return this.acc_bal;
+	}
+	public abstract float calc_rate();
+	public abstract void calc_amt(float time);
+}
+
+---------------------------------------------------------------------------------------------------------------------------
+
+package tr9;
+
+public class fd_account extends account {
+
+	public fd_account(int acc_no, float acc_bal, String name) {
+		super(acc_no, acc_bal, name);
+		this.roi = calc_rate();
+		// TODO Auto-generated constructor stub
+	}
+	public float calc_rate()
+	{
+		return 6f;
+	}
+	public void calc_amt(float time)
+	{
+		this.acc_bal = (float) (this.acc_bal*Math.pow((1f+this.roi/100f),time));
+	}
+}
+
+---------------------------------------------------------------------------------------------------------------------------
+
+package tr9;
+
+public class sb_account extends account{
+	
+	public sb_account(int acc_no, float acc_bal, String name) {
+		super(acc_no, acc_bal, name);
+		this.roi = calc_rate();
+		// TODO Auto-generated constructor stub
+	}
+	public float calc_rate()
+	{
+		return 4f;
+	}
+	public void calc_amt(float time)
+	{
+		this.acc_bal = (float) (this.acc_bal*Math.pow((1f+this.roi/100f),time));
+		
+	}
+}
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+package tr9;
+import java.util.*;
+public class test_account {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		sb_account Ram = new sb_account(32765,25000,"Ram");
+		sb_account Shyam = new sb_account(32875,35000,"Shyam");
+		fd_account Prashant = new fd_account(63748, 20000,"Prashant");
+		Scanner sc = new Scanner(System.in);
+		int years = sc.nextInt();
+		int months = sc.nextInt();
+		int days = sc.nextInt();
+		float time = years+months/12f+days/365f;
+		Ram.calc_amt(time);
+		Shyam.calc_amt(time);
+		Prashant.calc_amt(time);
+		System.out.println(Ram.acc_bal);
+		System.out.println(Shyam.acc_bal);
+		System.out.println(Prashant.acc_bal);
+	}
+
+}

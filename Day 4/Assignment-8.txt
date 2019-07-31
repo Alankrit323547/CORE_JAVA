@@ -1,0 +1,60 @@
+/**
+Name: ALANKRIT BAMRARA
+Type: Practice Assignment
+W.A.P. to print the following
+      1
+     2 2		
+    3 3 3
+   4 4 4 4
+  5 5 5 5 5   
+   4 4 4 4
+    3 3 3 	
+     2 2
+      1
+**/
+===========================================================================================================================
+package tr4p;
+
+public class seven {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int i,j,k;
+		for(i=0;i<5;i++)
+		{
+			k=4-i;
+			while(k>0)
+			{
+				System.out.print(" ");
+				k--;
+			}
+			k=i+1;
+			j=k;
+			while(k>0)
+			{
+				System.out.print(j+" ");
+				k--;
+			}
+			System.out.println();
+		}
+		for(i=1;i<5;i++)
+		{
+			k=i;
+			while(k>0)
+			{
+				System.out.print(" ");
+				k--;
+			}
+			k=5-i;
+			j=k;
+			while(k>0)
+			{
+				System.out.print(j+" ");
+				k--;
+			}
+			System.out.println();
+		}
+		
+	}
+
+}

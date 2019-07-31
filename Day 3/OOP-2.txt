@@ -1,0 +1,50 @@
+/**
+Name: ALANKRIT BAMRARA
+Type: Demo Assignment
+Object Oriented Programming - 2
+**/
+============================================================================================================================
+
+package tr3;
+
+import java.util.Scanner;
+
+class student
+{
+	String name;
+	int maths;
+	int science;
+	float average;
+	public void input(){
+		Scanner sc=new Scanner(System.in);
+		maths=sc.nextInt();
+		science=sc.nextInt();
+		average=(maths+science)/2.0f;
+	}
+	public void display(){
+		System.out.println("Name: "+name);
+		System.out.println("Average: "+average);
+	}
+}
+
+---------------------------------------------------------------------------------------------------------------------------
+
+package tr3;
+
+public class oops2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		student kohli=new student();
+		student rohit=new student();
+		kohli.name="Kohli";
+		rohit.name="Rohit";
+		kohli.input();
+		rohit.input();
+		if(kohli.average>rohit.average)
+			kohli.display();
+		else
+			rohit.display();
+	}
+
+}

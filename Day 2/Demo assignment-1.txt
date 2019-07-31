@@ -1,0 +1,26 @@
+/**
+Name: ALANKRIT BAMRARA
+Type: Demo Assignment
+Write a program to print the average of marks of 5 students and also print the marks greater than average.
+**/
+===========================================================================================================================
+
+package tr2;
+
+public class array1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] marks={91,92,86,89,94};
+		int sum=0,i;
+		float avg;
+		for(i=0;i<5;i++)
+			sum+=marks[i];
+		avg=sum/5.0f;
+		System.out.println(avg);
+		for(i=0;i<5;i++)
+			if(marks[i]>avg)
+				System.out.println(marks[i]);
+	}
+
+}

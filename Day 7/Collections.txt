@@ -1,0 +1,76 @@
+/**
+Name: ALANKRIT BAMRARA
+Type: Demo Assignment
+Collections
+**/
+============================================================================================================================
+
+package tr7;
+
+public class Student {
+	int std_id;
+	String name;
+	int m1,m2;
+	float avg;
+	public Student(int std_id, String name, int m1, int m2) {
+		this.std_id = std_id;
+		this.name = name;
+		this.m1 = m1;
+		this.m2 = m2;
+		this.avg=average();
+	}
+	public float average(){
+		return (m1+m2)/2f;
+	}
+}
+
+---------------------------------------------------------------------------------------------------------------------------
+
+package tr7;
+
+import java.util.ArrayList;
+
+public class collections {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ArrayList<Student> semester = new ArrayList<Student>();
+		Student Rohit = new Student(48875, "Rohit", 75, 86);
+		Student Rahul = new Student(48876, "Rahul", 91, 89);
+		Student Kohli = new Student(48877, "Kohli", 67, 51);
+		Student Dhoni = new Student(48878, "Dhoni", 80, 71);
+		
+		semester.add(Rohit);
+		semester.add(Rahul);
+		semester.add(Kohli);
+		semester.add(Dhoni);
+		semester.get(1);
+		collections ex = new collections();
+		ex.display(semester);
+		}
+	public void display(Student s)
+	{
+		System.out.println("ID = "+s.std_id+"\n"+
+				"Name = "+s.name+"\n"+
+				"Maths = "+s.m1+"\n"+
+				"Physics = "+s.m2+"\n"+
+				"Average = "+s.avg+"\n");
+	}
+	public void display(ArrayList<Student> std)
+	{
+		for(Student s:std)
+		{
+			System.out.println("==============================");	
+			System.out.println("ID = "+s.std_id+"\n"+
+				"Name = "+s.name+"\n"+
+				"Maths = "+s.m1+"\n"+
+				"Physics = "+s.m2+"\n"+
+				"Average = "+s.avg+"\n");
+		}
+		System.out.println("==============================");	
+	}
+
+}

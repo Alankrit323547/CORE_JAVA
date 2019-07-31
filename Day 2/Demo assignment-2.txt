@@ -1,0 +1,29 @@
+/**
+Name: ALANKRIT BAMRARA
+Type: Demo Assignment
+Write a program to print pairs of numbers from an array whose sum is 65.
+**/
+============================================================================================================================
+
+package tr2;
+
+public class array2 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] arr={21,15,34,91,50,16,44,11,49,54};
+		int i,j;
+		for(i=0;i<10;i++)
+		{
+			for(j=i+1;j<10;j++)
+			{
+				if(arr[i]+arr[j]==65)
+					System.out.println(arr[i]+" "+arr[j]);
+			}
+		}
+	}
+
+}

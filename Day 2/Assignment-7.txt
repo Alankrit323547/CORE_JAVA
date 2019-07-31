@@ -1,0 +1,33 @@
+/**
+Name: ALANKRIT BAMRARA
+Type: Practice Assignment
+W.A.P. to evaluate electricity bill on the following basis.
+• Upto 100 units Rs. 1.50
+• For the next 100 units Rs. 2.00
+• For next 50 units Rs. 2.50
+• Beyond 250 units Rs. 4.00
+**/
+============================================================================================================================
+
+package tr2;
+
+public class conditional2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		float unit=300.0f;
+		float bill;
+		if(unit<=100.0)
+			bill=(unit)*1.5f;
+		else if(unit<=200.0)
+			bill=150+(unit-100)*2.0f;
+		else if(unit<=250.0)
+			bill=350+(unit-200)*2.5f;
+		else 
+			bill=475+(unit-250)*4;
+		System.out.println(bill);
+			
+		
+	}
+
+}

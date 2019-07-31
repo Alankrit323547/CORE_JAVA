@@ -1,0 +1,54 @@
+/**
+Name: Alankrit Bamrara
+Type: Practice Assignment
+Write a program to accept as input, marks in 4 subjects of each of the 3 students. 
+   Calculate the average of each student. Print the name & total marks of the student who scored highest average.
+**/
+============================================================================================================================
+
+package tr2;
+import java.util.*;
+public class avg2 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		float m,sum=0.0f,a,b,c;
+		String str1,str2,str3;
+		int i;
+		str1=sc.next();
+		for(i=0;i<4;i++)
+		{
+			m=sc.nextFloat();
+			sum=sum+m;
+		}
+		a=sum/4;
+		sum=0.0f;
+		str2=sc.next();
+		for(i=0;i<4;i++)
+		{
+			m=sc.nextFloat();
+			sum=sum+m;
+		}
+		b=sum/4;
+		sum=0.0f;
+		str3=sc.next();
+		for(i=0;i<4;i++)
+		{
+			m=sc.nextFloat();
+			sum=sum+m;
+		}
+		c=sum/4;
+		sum=0.0f;
+		if((a>b)&&(a>c))
+			System.out.println(str1+" has highest average: "+a);
+		if((b>a)&&(b>c))
+			System.out.println(str2+" has highest average: "+b);
+		if((c>a)&&(c>b))
+			System.out.println(str3+" has highest average: "+c);
+	}
+
+}

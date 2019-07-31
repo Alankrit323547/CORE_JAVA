@@ -1,0 +1,57 @@
+/**
+Name: ALANKRIT BAMRARA
+Type: Demo Assignment
+Method Overriding
+**/
+===========================================================================================================================
+
+package tr4;
+
+public class bank {
+
+	public float get_roi()
+	{
+		return 0f;
+	}
+}
+
+------------------------------------------------------------------------------------------------------------------------------
+
+package tr4;
+
+public class citi extends bank {
+
+	public float get_roi()
+	{
+		return 9.5f;
+	}
+}
+
+--------------------------------------------------------------------------------------------------------------------------
+
+package tr4;
+
+public class icici extends bank {
+
+	public float get_roi()
+	{
+		return 8.5f;
+	}
+}
+
+---------------------------------------------------------------------------------------------------------------------------
+
+package tr4;
+
+public class test_bank {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		bank b;
+		b = new icici();
+		System.out.println("ICICI Rate of Interest: "+b.get_roi());
+		b = new citi();
+		System.out.println("CITI Rate of Interest: "+b.get_roi());
+	}
+
+}

@@ -1,0 +1,70 @@
+/**
+Name: ALANKRIT BAMRARA
+Type: Demo Assignment
+Access Modifiers
+**/
+===========================================================================================================================
+
+package tr5;
+
+public class parent {
+	private int a=10;
+	int b=20;
+	protected int c=30;
+	public int d=40;
+	
+	public void display(){
+		System.out.println(a);
+	}
+}
+
+----------------------------------------------------------------------------------------------------------------------------
+
+package tr5;
+
+public class child_1 extends parent {
+	
+	public static void main(String[] args){
+		parent p = new parent();
+		p.display();
+		System.out.println(p.b);
+		System.out.println(p.c);
+		System.out.println(p.d);
+	}
+}
+
+---------------------------------------------------------------------------------------------------------------------------
+
+package dummy;
+
+import tr5.parent;
+
+public class child_2 extends parent {
+	public void details(){
+		//System.out.println("a = "+a);
+		//System.out.println("b = "+b);
+		System.out.println("c = "+c);
+		System.out.println("d = "+d);
+	}
+	public static void main(String[] args){
+		
+	}
+}
+
+---------------------------------------------------------------------------------------------------------------------------
+
+package dummy;
+
+
+public class testclass {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		child_2 obj = new child_2();
+		obj.details();
+	}
+
+}

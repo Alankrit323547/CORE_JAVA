@@ -1,0 +1,35 @@
+/**
+Name: ALANKRIT BAMRARA
+Type: Demo Assignment
+Exception Handling-2
+**/
+===========================================================================================================================
+
+package tr5;
+
+public class exception2 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try
+		{
+		int[] arr = {23,1,4,5,6};
+		System.out.println(arr[3]);
+		System.out.println(arr[5]);
+		System.out.println("hi");
+		}
+		catch(ArrayIndexOutOfBoundsException e)
+		{
+			System.out.println("In catch block");
+		}
+		catch(ArithmeticException ae)
+		{
+			System.out.println("Arithmetic exception");
+		}
+		System.out.println("Out of catch block");
+	}
+
+}

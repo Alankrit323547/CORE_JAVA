@@ -1,0 +1,37 @@
+/**
+Name: Alankrit Bamrara
+Type: Demo Assignment
+Static Variables
+**/
+===========================================================================================================================
+
+package tr5;
+
+public class emp {
+	static int b=0;
+	int c=0;
+	public emp()
+	{
+		b++;
+		c++;
+	}
+}
+
+---------------------------------------------------------------------------------------------------------------------------
+
+package tr5;
+
+public class test_emp {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		emp e1 = new emp();
+		System.out.println(e1.b+" "+e1.c);
+		emp e2 = new emp();
+		System.out.println(e2.b+" "+e2.c);
+	}
+
+}

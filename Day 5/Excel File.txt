@@ -1,0 +1,117 @@
+/**
+Name: ALANKRIT BAMRARA
+Type: Practice Assignment
+W.A.P. to write prime numbers, even numbers and odd numbers in three different sheets
+**/
+===========================================================================================================================
+
+package tr5;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class excel_io_2 {
+
+	
+	/**
+	 * @param args
+	 */
+	public static boolean[] arr = new boolean[100];
+	public static int i,j;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		for(i=2;i<100;i++)
+		{
+			if(arr[i]==false)
+			{
+				for(j=2*i;j<100;j=j+i)
+				{
+					arr[j]=true;
+				}
+			}
+		}
+		int k,m,p=0,e=0,o=0;
+		for(k=0;k<10;k++)
+		{
+			m=read_excel(k,0,"numbers");
+			if(prime(m)==true)
+			{
+				write_excel(p,0,"prime",m);
+				p++;
+			}
+			else
+			{
+				if(check_num(m)==0)
+				{
+					write_excel(e,0,"even",m);
+					e++;
+				}
+				else
+				{
+					write_excel(o,0,"odd",m);
+					o++;
+				}
+			}
+		}
+	}
+	public static boolean prime(int num)
+	{
+		if(arr[num]==false)
+			return true;
+		return false;
+	}
+	public static int check_num(int num)
+	{
+		if(num%2==0)
+			return 0;
+		return 1;
+	}
+	public static int read_excel(int r, int c, String sheet)
+	{
+		try {
+			File f = new File("C:\\Users\\alankrit.bamrara\\Desktop\\Excel\\test-2.xlsx");
+			FileInputStream fis = new FileInputStream(f);
+			XSSFWorkbook wb = new XSSFWorkbook(fis);
+			XSSFSheet sh = wb.getSheet(sheet);
+			XSSFRow row = sh.getRow(r);
+			XSSFCell cell = row.getCell(c);
+			int p = (int) cell.getNumericCellValue();
+			return p;
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return 0;
+	}
+	public static void write_excel(int r, int c, String sheet, int data)
+	{
+		try {
+			File f = new File("C:\\Users\\alankrit.bamrara\\Desktop\\Excel\\test-2.xlsx");
+			FileInputStream fis = new FileInputStream(f);
+			XSSFWorkbook wb = new XSSFWorkbook(fis);
+			XSSFSheet sh = wb.getSheet(sheet);
+			XSSFRow row = sh.createRow(r);
+			XSSFCell cell = row.createCell(c);
+			cell.setCellValue(data);
+			FileOutputStream fos = new FileOutputStream(f);
+			wb.write(fos);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

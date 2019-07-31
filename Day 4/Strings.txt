@@ -1,0 +1,39 @@
+/**
+Name: ALANKRIT BAMRARA
+Type: Practice Assignment
+W.A.P. to execute the following:
+INPUT - I am learning java
+OUTPUT - I
+         am
+         learning
+         java
+**/
+===========================================================================================================================
+
+package tr4;
+import java.util.*;
+public class strings2 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		String str=sc.nextLine();
+		int i=0,k=0;
+		while(k!=-1)
+		{
+			k=str.indexOf(" ",i);
+			if(k==-1)
+			{
+				System.out.println(str.substring(i,str.length()));
+				break;
+			}
+			System.out.println(str.substring(i,k));
+			i=k+1;
+		}
+	}
+
+
+}

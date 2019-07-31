@@ -1,0 +1,96 @@
+/**
+Name: Alankrit Bamrara
+Type: Demo Assignment
+Abstraction
+**/
+============================================================================================================================
+
+package tr5;
+
+public abstract class employee {
+	int emp_id;
+	String emp_name;
+	int rate_per_unit;
+	
+	public abstract int calc_monthly_salary();
+	public employee(int emp_id, String emp_name, int rate_per_unit)
+	{
+		this.emp_id = emp_id;
+		this.emp_name = emp_name;
+		this.rate_per_unit = rate_per_unit;
+	}
+	public int getEmp_id() {
+		return emp_id;
+	}
+	public void setEmp_id(int emp_id) {
+		this.emp_id = emp_id;
+	}
+	public String getEmp_name() {
+		return emp_name;
+	}
+	public void setEmp_name(String emp_name) {
+		this.emp_name = emp_name;
+	}
+	public int getRate_per_unit() {
+		return rate_per_unit;
+	}
+	public void setRate_per_unit(int rate_per_unit) {
+		this.rate_per_unit = rate_per_unit;
+	}
+}
+
+---------------------------------------------------------------------------------------------------------------------------
+
+package tr5;
+
+public class fte extends employee {
+	int days;
+	public fte(int days, int emp_id, String emp_name, int rate_per_unit) {
+		super(emp_id, emp_name, rate_per_unit);
+		this.days = days;
+		// TODO Auto-generated constructor stub
+	}
+	public int calc_monthly_salary(){
+		int salary;
+		salary = days*rate_per_unit;
+		return salary;
+	}
+
+}
+
+---------------------------------------------------------------------------------------------------------------------------
+
+package tr5;
+
+public class consultant extends employee {
+	int hours;
+	public consultant(int hours, int emp_id, String emp_name, int rate_per_unit) {
+		super(emp_id, emp_name, rate_per_unit);
+		this.hours = hours;
+		// TODO Auto-generated constructor stub
+	}
+	public int calc_monthly_salary(){
+		int salary;
+		salary = hours*rate_per_unit;
+		return salary;
+	}
+}
+
+---------------------------------------------------------------------------------------------------------------------------
+
+package tr5;
+
+public class abstraction1 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		consultant c = new consultant(4, 323145, "Raju", 15000);
+		fte f = new fte(30, 324561, "Shyam", 36782);
+		System.out.println("Salary of "+c.getEmp_name()+" is "+c.calc_monthly_salary());
+		System.out.println("Salary of "+f.getEmp_name()+" is "+f.calc_monthly_salary());
+	}
+
+}

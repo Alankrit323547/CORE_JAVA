@@ -1,0 +1,28 @@
+/**
+Name: ALANKRIT BAMRARA
+Type: Demo assignment
+W.A.P. to implement switch
+**/
+===========================================================================================================================S
+
+package tr3;
+
+public class conditional {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int n=5;
+		switch(n)
+		{
+			case 5: System.out.println("5");
+				break;
+			case 7: System.out.println("7");
+				break;
+			case 12: System.out.println("12");
+				break;
+			default: System.out.println("None");
+		}
+
+	}
+
+}

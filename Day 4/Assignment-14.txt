@@ -1,0 +1,23 @@
+/**
+Name: ALANKRIT BAMRARA
+Type: Practice Assignment
+Print the sum of all the numbers between 0 & 200
+**/
+===========================================================================================================================
+
+package tr4p;
+
+public class fourteen {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int i,sum=0;
+		for(i=0;i<200;i=i+11)
+		{
+			if(i%7==0)
+				sum=sum+i;
+		}
+		System.out.println(sum);
+	}
+
+}
